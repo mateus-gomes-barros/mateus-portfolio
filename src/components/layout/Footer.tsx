@@ -9,7 +9,7 @@ export function Footer() {
           </p>
   
           <p className="font-mono text-xs text-ink-faint">
-            Designed &amp; developed from scratch.
+            Designed &amp; developed by Mateus Gomes. All rights reserved.
           </p>
         </div>
       </footer>

@@ -24,7 +24,7 @@ export const experience: ExperienceItem[] = [
 
   {
     id: 'computer-science',
-    organization: 'Descomplica Faculdade Digital',
+    organization: 'Descomplica Faculdade Digital (Online)',
     role: 'Bachelor of Science in Computer Science',
     period: '2022 — 2026',
     location: 'Brazil',
@@ -36,7 +36,7 @@ export const experience: ExperienceItem[] = [
     id: 'computer-engineering',
     organization: 'Federal University of Maranhão (UFMA)',
     role: 'Computer Engineering',
-    period: '2026 — Present',
+    period: '2022 — 2025',
     location: 'São Luís, Brazil',
     description: `Currently pursuing a degree in Computer Engineering, expanding knowledge in software engineering, computer architecture, and modern technologies.`,
     type: 'education',
