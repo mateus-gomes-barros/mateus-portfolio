@@ -36,7 +36,7 @@ export const experience: ExperienceItem[] = [
     id: 'computer-engineering',
     organization: 'Federal University of Maranhão (UFMA)',
     role: 'Computer Engineering',
-    period: '2022 — 2025',
+    period: '2021 — 2025',
     location: 'São Luís, Brazil',
     description: `Currently pursuing a degree in Computer Engineering, expanding knowledge in software engineering, computer architecture, and modern technologies.`,
     type: 'education',
