@@ -39,7 +39,7 @@ export function Navbar() {
             }}
             className="font-display text-sm font-semibold tracking-tight text-ink"
           >
-            Mateus<span className="text-signal">.</span>Gomes
+            Mateus Gomes
           </a>
 
           <nav
