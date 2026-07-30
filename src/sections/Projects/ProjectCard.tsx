@@ -53,9 +53,21 @@ export function ProjectCard({
 
       {/* Content */}
       <div className={reversed ? 'lg:order-1' : ''}>
-        <span className="font-mono text-xs uppercase tracking-wide text-ink-faint">
-          {String(index + 1).padStart(2, '0')} · {project.role}
-        </span>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className="font-mono text-xs uppercase tracking-wide text-ink-faint">
+            {String(index + 1).padStart(2, '0')} · {project.role}
+          </span>
+
+          {project.liveUrl && project.liveUrl !== '#' && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-medium text-emerald-400">
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-emerald-400"
+                aria-hidden="true"
+              />
+              Live
+            </span>
+          )}
+        </div>
 
         <h3 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
           {project.title}
@@ -90,33 +102,32 @@ export function ProjectCard({
 
         <div className="mt-6 flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <Tag key={tech}>
-              {tech}
-            </Tag>
+            <Tag key={tech}>{tech}</Tag>
           ))}
         </div>
 
         <div className="mt-7 flex flex-wrap gap-3">
-  {project.githubUrl && (
-    <Button
-      href={project.githubUrl}
-      variant="secondary"
-      icon={<Code2 size={15} />}
-    >
-      GitHub
-    </Button>
-  )}
+          {project.githubUrl && (
+            <Button
+              href={project.githubUrl}
+              variant="secondary"
+              icon={<Code2 size={15} />}
+            >
+              GitHub
+            </Button>
+          )}
 
-  {project.liveUrl && project.liveUrl !== '#' && (
-    <Button
-      href={project.liveUrl}
-      variant="ghost"
-      icon={<ArrowUpRight size={15} />}
-    >
-      Live App
-    </Button>
-  )}
-</div>
+          {project.liveUrl && project.liveUrl !== '#' && (
+            <Button
+            href={project.liveUrl}
+            variant="ghost"
+            icon={<ArrowUpRight size={15} />}
+            className="border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:border-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300"
+          >
+            Live App
+          </Button>
+          )}
+        </div>
       </div>
     </motion.article>
   )
