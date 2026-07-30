@@ -97,26 +97,26 @@ export function ProjectCard({
         </div>
 
         <div className="mt-7 flex flex-wrap gap-3">
-          {project.githubUrl && (
-            <Button
-              href={project.githubUrl}
-              variant="secondary"
-              icon={<Code2 size={15} />}
-            >
-              GitHub
-            </Button>
-          )}
+  {project.githubUrl && (
+    <Button
+      href={project.githubUrl}
+      variant="secondary"
+      icon={<Code2 size={15} />}
+    >
+      GitHub
+    </Button>
+  )}
 
-          {project.liveUrl && project.liveUrl !== '#' && (
-            <Button
-              href={project.liveUrl}
-              variant="ghost"
-              icon={<ArrowUpRight size={15} />}
-            >
-              Live Demo
-            </Button>
-          )}
-        </div>
+  {project.liveUrl && project.liveUrl !== '#' && (
+    <Button
+      href={project.liveUrl}
+      variant="ghost"
+      icon={<ArrowUpRight size={15} />}
+    >
+      Live App
+    </Button>
+  )}
+</div>
       </div>
     </motion.article>
   )

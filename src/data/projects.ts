@@ -1,33 +1,35 @@
 import type { Project } from '../types'
 
 export const projects: Project[] = [
-  {
-    id: 'minimal-productivity-app',
-    title: 'Minimal Productivity App',
-    role: 'Full Stack Developer',
-    description:
-      'A modern productivity platform designed to help users build consistent habits through a minimalist experience. Built from scratch using modern software engineering principles and continuously evolving as a real-world product.',
-    features: [
-      'Daily task management',
-      'Habit streaks',
-      'Pomodoro timer',
-      'Time tracking',
-      'Productivity analytics',
-      'Project organization',
-      'Responsive UI',
-    ],
-    impact:
-      'Designed as a long-term SaaS product with a strong focus on scalability, maintainability, performance, and user experience.',
-    technologies: [
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'JavaScript',
-      'REST APIs',
-      'Git',
-    ],
-    image: '/projects/productivity-app.jpeg',
-imageAlt: 'Minimal Productivity App dashboard preview',
+    {
+      id: 'minimal-productivity-app',
+      title: 'Minimal Productivity App',
+      role: 'Full Stack Developer',
+      description:
+        'A modern productivity platform designed to help users build consistent habits through a minimalist experience. Built from scratch using React, TypeScript, and modern software engineering practices, and deployed to production on Vercel.',
+      features: [
+        'Daily task management',
+        'Habit streaks',
+        'Pomodoro timer',
+        'Time tracking',
+        'Productivity analytics',
+        'Project organization',
+        'Responsive UI',
+      ],
+      impact:
+        'Designed as a long-term SaaS product with a strong focus on scalability, maintainability, performance, and user experience.',
+      technologies: [
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'JavaScript',
+        'REST APIs',
+        'Git',
+      ],
+      image: '/projects/productivity-app.jpeg',
+      imageAlt: 'Minimal Productivity App dashboard preview',
+      liveUrl: 'https://pomodoro-1ktl-theta.vercel.app/',
+    
   },
 
   {
