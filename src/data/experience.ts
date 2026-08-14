@@ -8,7 +8,8 @@ export const experience: ExperienceItem[] = [
     period: 'Mar 2022 — May 2026',
     location: 'Remote · Brazil',
     website: 'https://www.vturb.com',
-    description: `Developed scalable SaaS applications, customer-facing solutions, REST API integrations, automation workflows, and internal tools for a platform serving more than 10,000 customers worldwide.`,
+    description:
+      'Developed scalable SaaS applications, customer-facing solutions, REST API integrations, automation workflows, and internal tools for a video platform serving more than 10,000 customers worldwide. Worked with AWS-backed infrastructure supporting VSL delivery and scalability, contributed to backend integrations involving Java and Node.js, and used AI-assisted development tools to accelerate debugging, implementation, code analysis, and delivery optimization.',
     type: 'work',
   },
 
@@ -18,7 +19,8 @@ export const experience: ExperienceItem[] = [
     role: 'Full-Stack Development Scholar',
     period: 'Sep 2021 — Jan 2022',
     location: 'Remote · Brazil',
-    description: `Selected for a government-funded software development program focused on full-stack engineering, real-world projects, software architecture, and modern development practices.`,
+    description:
+      'Selected for a government-funded software development program focused on full-stack engineering, real-world projects, software architecture, APIs, databases, and modern development practices.',
     type: 'education',
   },
 
@@ -28,7 +30,8 @@ export const experience: ExperienceItem[] = [
     role: 'Bachelor of Science in Computer Science',
     period: '2022 — 2026',
     location: 'Brazil',
-    description: `Graduated with a Bachelor's degree in Computer Science, building a strong foundation in software engineering, algorithms, data structures, and modern application development.`,
+    description:
+      "Graduated with a Bachelor's degree in Computer Science, building a strong foundation in software engineering, algorithms, data structures, and modern application development.",
     type: 'education',
   },
 
@@ -38,7 +41,8 @@ export const experience: ExperienceItem[] = [
     role: 'Computer Engineering',
     period: '2021 — 2025',
     location: 'São Luís, Brazil',
-    description: `Currently pursuing a degree in Computer Engineering, expanding knowledge in software engineering, computer architecture, and modern technologies.`,
+    description:
+      'Studied Computer Engineering, expanding my foundation in software engineering, computer architecture, systems, and modern technologies.',
     type: 'education',
   },
 ]

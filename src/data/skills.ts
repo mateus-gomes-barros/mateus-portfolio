@@ -14,14 +14,21 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: 'Backend & Integrations',
-    items: ['Node.js', 'REST APIs', 'Webhooks'],
+    items: [
+      'Java',
+      'Node.js',
+      'REST APIs',
+      'Webhooks',
+    ],
   },
   {
-    category: 'Tools & Platforms',
+    category: 'Cloud, AI & Tools',
     items: [
+      'AWS',
+      'AI-Assisted Development',
       'Git',
-      'Figma',
       'Make',
+      'Figma',
       'GA4',
       'GTM',
       'Meta Pixel',
