@@ -48,6 +48,7 @@ export const projects: Project[] = [
     impact:
       'Adopted by nearly 200 customers within the first two months, reducing support complaints related to JavaScript implementations by approximately 40%.',
     technologies: [
+      'Next.js',
       'React',
       'TypeScript',
       'Tailwind CSS',
@@ -73,6 +74,7 @@ imageAlt: 'platform that generates production-ready JavaScript',
     impact:
       'Contributed to approximately 10% higher customer retention through engagement and marketing-focused features.',
     technologies: [
+      'Next.js',
       'React',
       'TypeScript',
       'Node.js',
