@@ -15,7 +15,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: 'Email',
-    href: 'mailto:mateusgomes.dev@icloud.com',
+    href: 'mailto:mateusgomesbarros@hotmail.com',
     icon: 'mail',
     external: false,
   },

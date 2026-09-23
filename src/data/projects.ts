@@ -3,34 +3,38 @@ import type { Project } from '../types'
 export const projects: Project[] = [
     {
       id: 'minimal-productivity-app',
-      title: 'Minimal Productivity App',
-      role: 'Full Stack Developer',
+      title: 'Focus — Multiplatform Productivity App',
+      role: 'Full Stack Developer · Product Creator',
       description:
-        'A modern productivity platform designed to help users build consistent habits through a minimalist experience. Built from scratch using React, TypeScript, and modern software engineering practices, and deployed to production on Vercel.',
+        'Created Focus to organize my own daily routine and make it easier to turn plans into focused work. After using it every day and refining the experience based on real needs, I expanded it into a multiplatform productivity product for web, iOS, Android, macOS, Windows, and Wear OS. Focus brings task planning, focus sessions, and progress tracking together in one connected experience.',
       features: [
-        'Daily task management',
-        'Habit streaks',
-        'Pomodoro timer',
-        'Time tracking',
-        'Productivity analytics',
-        'Project organization',
-        'Responsive UI',
+        'Personalized dashboard with daily planning, priorities, upcoming tasks, and deadlines',
+        'Pomodoro timer connected to tasks, with automatic focus-time tracking',
+        'Project and task management with scheduling and progress tracking',
+        'Goals, productivity analytics, habit streaks, and achievement badges',
+        'Cross-device experience across web, mobile, desktop, and Wear OS',
+        'Focus Pulse: a dedicated smartwatch timer with Android integration',
+        'Responsive interfaces, language options, and platform-specific notifications',
       ],
       impact:
-        'Designed as a long-term SaaS product with a strong focus on scalability, maintainability, performance, and user experience.',
+        'Built and continuously improved through daily personal use, evolving from a focused productivity tool into a multiplatform product with connected task management, time tracking, and device-specific experiences.',
       technologies: [
         'React',
         'TypeScript',
+        'Vite',
         'Tailwind CSS',
-        'JavaScript',
+        'Capacitor',
+        'Tauri 2',
+        'Kotlin',
+        'Jetpack Compose',
+        'Supabase',
         'REST APIs',
         'Git',
       ],
       image: '/projects/productivity-app.jpeg',
-      imageAlt: 'Minimal Productivity App dashboard preview',
+      imageAlt: 'Focus productivity app dashboard preview',
       liveUrl: 'https://pomodoro-1ktl-theta.vercel.app/',
-    
-  },
+    },
 
   {
     id: 'turbgen',
