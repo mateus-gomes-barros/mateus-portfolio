@@ -33,7 +33,7 @@ export const projects: Project[] = [
       ],
       image: '/projects/productivity-app.jpeg',
       imageAlt: 'Focus productivity app dashboard preview',
-      liveUrl: 'https://pomodoro-1ktl-theta.vercel.app/',
+      liveUrl: 'https://focus-web.online/',
     },
 
   {
