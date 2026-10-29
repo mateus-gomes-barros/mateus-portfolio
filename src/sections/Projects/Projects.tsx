@@ -18,7 +18,7 @@ export function Projects() {
         <SectionHeading
           eyebrow={pt ? translations.projects.eyebrow : "02 · Work"}
           title={pt ? translations.projects.title : "Featured projects"}
-          description="A selection of products I've built and shipped, from a personal SaaS in progress to platforms used by thousands of customers."
+          description={pt ? translations.projects.description : "A selection of products I've built and shipped, from a personal SaaS in progress to platforms used by thousands of customers."}
         />
 
         <div className="flex flex-col gap-8">
