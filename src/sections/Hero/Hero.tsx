@@ -8,6 +8,8 @@ import {
 
 import { GradientMesh } from '@/components/backgrounds/GradientMesh'
 import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { translations } from '@/i18n/translations'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -37,6 +39,8 @@ const itemVariants: Variants = {
 }
 
 export function Hero() {
+  const { language } = useLanguage()
+  const pt = language === 'pt-BR'
   return (
     <section
       id="hero"
@@ -60,7 +64,7 @@ export function Hero() {
           </span>
 
           <span className="font-mono text-xs text-ink-muted">
-            Currently building a SaaS product
+            {pt ? translations.hero.status : 'Currently building a SaaS product'}
             <span className="ml-0.5 animate-blink text-signal">_</span>
           </span>
         </motion.div>
@@ -76,18 +80,14 @@ export function Hero() {
           variants={itemVariants}
           className="mt-4 font-mono text-base text-signal sm:text-lg"
         >
-          Frontend Software Engineer
+          {pt ? translations.hero.role : 'Frontend Software Engineer'}
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-ink-muted"
         >
-          Frontend Software Developer with 5 years of experience building
-          scalable SaaS applications using React, TypeScript, JavaScript, and
-          Node.js. Contributed to a platform serving more than 10,000 customers
-          worldwide and passionate about building products that solve
-          real-world problems.
+          {pt ? translations.hero.intro : 'Frontend Software Developer with 5 years of experience building scalable SaaS applications using React, TypeScript, JavaScript, and Node.js. Contributed to a platform serving more than 10,000 customers worldwide and passionate about building products that solve real-world problems.'}
         </motion.p>
 
         <motion.div
@@ -99,7 +99,7 @@ export function Hero() {
             variant="primary"
             icon={<ArrowUpRight size={16} />}
           >
-            View Resume
+            {pt ? translations.hero.resume : 'View Resume'}
           </Button>
 
           <Button
