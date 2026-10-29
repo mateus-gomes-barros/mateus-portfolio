@@ -3,8 +3,13 @@ import { Briefcase, GraduationCap } from 'lucide-react'
 import { RevealOnScroll } from '@/components/animations/RevealOnScroll'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { experience } from '@/data/experience'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { translations } from '@/i18n/translations'
+import { experienceTranslations } from '@/i18n/experienceTranslations'
 
 export function Experience() {
+  const { language } = useLanguage()
+  const pt = language === 'pt-BR'
   return (
     <section
       id="experience"
@@ -12,8 +17,8 @@ export function Experience() {
     >
       <div className="mx-auto max-w-content px-6">
         <SectionHeading
-          eyebrow="04 · Timeline"
-          title="Experience & education"
+          eyebrow={pt ? translations.experience.eyebrow : "04 · Timeline"}
+          title={pt ? translations.experience.title : "Experience & education"}
         />
 
         <ol className="relative border-l border-border pl-8">
@@ -41,7 +46,7 @@ export function Experience() {
 
                   {entry.period && (
                     <span className="font-mono text-xs text-ink-faint">
-                      {entry.period}
+                      {pt ? experienceTranslations[entry.id as keyof typeof experienceTranslations]?.period ?? entry.period : entry.period}
                     </span>
                   )}
                 </div>
@@ -59,11 +64,11 @@ export function Experience() {
                     />
                   )}
 
-                  {entry.role}
+                  {pt ? experienceTranslations[entry.id as keyof typeof experienceTranslations]?.role ?? entry.role : entry.role}
                 </p>
 
                 <p className="mt-3 max-w-2xl text-balance text-sm leading-relaxed text-ink-muted">
-                  {entry.description}
+                  {pt ? experienceTranslations[entry.id as keyof typeof experienceTranslations]?.description ?? entry.description : entry.description}
                 </p>
               </li>
             </RevealOnScroll>
