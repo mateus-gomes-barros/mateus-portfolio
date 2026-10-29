@@ -11,7 +11,40 @@ export function Navbar() {
   const { language, setLanguage } = useLanguage()
   const pt = language === 'pt-BR'
   const labels: Record<string, string> = { about: 'Sobre', projects: 'Projetos', 'other-projects': 'Outros projetos', skills: 'Habilidades', experience: 'Experiência', contact: 'Contato' }
-  const switcher = <div className="flex shrink-0 items-center rounded-full border border-border bg-bg-raised/70 p-0.5" role="group" aria-label={pt ? 'Selecionar idioma' : 'Select language'}>{(['en', 'pt-BR'] as const).map((value) => <button key={value} type="button" onClick={() => setLanguage(value)} aria-pressed={language === value} className={`rounded-full px-2.5 py-1 text-xs font-mono transition-colors ${language === value ? 'bg-signal text-bg' : 'text-ink-muted hover:text-ink'}`}>{value === 'en' ? 'EN' : 'PT'}</button>)}</div>
+  const switcher = (
+    <div
+      role="group"
+      aria-label={pt ? 'Selecionar idioma' : 'Select language'}
+      className="relative isolate flex h-9 w-[92px] shrink-0 items-center overflow-hidden rounded-xl border border-white/10 bg-[#0c1118] p-[3px]"
+      style={{
+        boxShadow: 'inset 0 2px 5px rgba(0,0,0,.8), inset 0 -1px 1px rgba(255,255,255,.08), 0 1px 0 rgba(255,255,255,.06)',
+      }}
+    >
+      <motion.span
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[3px] top-[3px] z-0 h-[calc(100%-6px)] w-[calc(50%-3px)] rounded-[9px] border border-white/20"
+        initial={false}
+        animate={{ x: pt ? '100%' : '0%' }}
+        transition={{ type: 'spring', stiffness: 460, damping: 29, mass: 0.65 }}
+        style={{
+          background: 'linear-gradient(165deg, #3b4753 0%, #222c38 45%, #121923 100%)',
+          boxShadow: 'inset 0 1px 1px rgba(255,255,255,.32), inset 0 -2px 2px rgba(0,0,0,.65), 0 3px 5px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.4)',
+        }}
+      />
+      {(['en', 'pt-BR'] as const).map((value) => (
+        <button
+          key={value}
+          type="button"
+          onClick={() => setLanguage(value)}
+          aria-pressed={language === value}
+          aria-label={value === 'en' ? 'English' : 'Português'}
+          className={`relative z-10 flex h-full w-1/2 items-center justify-center rounded-lg font-mono text-[11px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${language === value ? 'text-signal' : 'text-ink-faint hover:text-ink-muted'}`}
+        >
+          {value === 'en' ? 'EN' : 'PT'}
+        </button>
+      ))}
+    </div>
+  )
 
   const activeId = useActiveSection(
     navigationLinks.map((link) => link.id),
