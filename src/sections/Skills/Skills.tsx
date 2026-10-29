@@ -22,12 +22,12 @@ export function Skills() {
         <div className="grid gap-5 sm:grid-cols-3">
           {skillGroups.map((group, index) => (
             <RevealOnScroll
-              key={pt ? ({ 'Backend & Integrations': 'Backend e integrações', 'Cloud, AI & Tools': 'Nuvem, IA e ferramentas' } as Record<string, string>)[group.category] ?? group.category : group.category}
+              key={group.category}
               delay={index * 0.08}
             >
               <div className="h-full rounded-2xl border border-border bg-bg-surface p-6">
                 <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-ink-faint">
-                  {group.category}
+                  {pt ? ({ 'Backend & Integrations': 'Backend e integrações', 'Cloud, AI & Tools': 'Nuvem, IA e ferramentas' } as Record<string, string>)[group.category] ?? group.category : group.category}
                 </h3>
 
                 <div className="mt-4 flex flex-wrap gap-2">
