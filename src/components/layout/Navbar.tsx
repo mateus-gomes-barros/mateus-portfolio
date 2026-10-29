@@ -15,22 +15,40 @@ export function Navbar() {
     <div
       role="group"
       aria-label={pt ? 'Selecionar idioma' : 'Select language'}
-      className="relative isolate flex h-9 w-[92px] shrink-0 items-center overflow-hidden rounded-xl border border-white/10 bg-[#0c1118] p-[3px]"
+      className="relative isolate flex h-10 w-[104px] shrink-0 items-center overflow-hidden rounded-[18px] border border-white/[0.16] bg-white/[0.035] p-[4px] backdrop-blur-2xl"
       style={{
-        boxShadow: 'inset 0 2px 5px rgba(0,0,0,.8), inset 0 -1px 1px rgba(255,255,255,.08), 0 1px 0 rgba(255,255,255,.06)',
+        boxShadow: 'inset 0 1px 1px rgba(255,255,255,.13), inset 0 -3px 9px rgba(0,0,0,.36), 0 3px 12px rgba(0,0,0,.18)',
       }}
     >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent"
+      />
       <motion.span
         aria-hidden="true"
-        className="pointer-events-none absolute left-[3px] top-[3px] z-0 h-[calc(100%-6px)] w-[calc(50%-3px)] rounded-[9px] border border-white/20"
+        className="pointer-events-none absolute left-[4px] top-[4px] z-0 h-[calc(100%-8px)] w-[calc(50%-4px)] overflow-hidden rounded-[15px] border border-white/[0.28] backdrop-blur-xl"
         initial={false}
-        animate={{ x: pt ? '100%' : '0%' }}
-        transition={{ type: 'spring', stiffness: 460, damping: 29, mass: 0.65 }}
-        style={{
-          background: 'linear-gradient(165deg, #3b4753 0%, #222c38 45%, #121923 100%)',
-          boxShadow: 'inset 0 1px 1px rgba(255,255,255,.32), inset 0 -2px 2px rgba(0,0,0,.65), 0 3px 5px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.4)',
+        animate={{
+          x: pt ? '100%' : '0%',
+          scaleX: [1, 1.12, 0.96, 1],
+          scaleY: [1, 0.92, 1.04, 1],
+          borderRadius: ['15px', '13px', '17px', '15px'],
         }}
-      />
+        transition={{
+          x: { type: 'spring', stiffness: 290, damping: 23, mass: 0.75 },
+          scaleX: { duration: 0.48, ease: 'easeInOut' },
+          scaleY: { duration: 0.48, ease: 'easeInOut' },
+          borderRadius: { duration: 0.48 },
+        }}
+        style={{
+          background: 'linear-gradient(150deg, rgba(255,255,255,.30) 0%, rgba(209,236,243,.14) 38%, rgba(143,179,195,.12) 65%, rgba(255,255,255,.20) 100%)',
+          boxShadow: 'inset 0 1px 1px rgba(255,255,255,.58), inset 0 -2px 3px rgba(255,255,255,.10), 0 3px 10px rgba(0,0,0,.26), 0 0 16px rgba(184,226,239,.10)',
+        }}
+      >
+        <span className="absolute -left-2 -top-4 h-9 w-12 rotate-[-28deg] rounded-full bg-white/20 blur-[10px]" />
+        <span className="absolute inset-x-2 top-[2px] h-[1px] rounded-full bg-white/50 blur-[.3px]" />
+        <span className="absolute -bottom-3 right-0 h-7 w-9 rounded-full bg-signal/15 blur-lg" />
+      </motion.span>
       {(['en', 'pt-BR'] as const).map((value) => (
         <button
           key={value}
@@ -38,7 +56,7 @@ export function Navbar() {
           onClick={() => setLanguage(value)}
           aria-pressed={language === value}
           aria-label={value === 'en' ? 'English' : 'Português'}
-          className={`relative z-10 flex h-full w-1/2 items-center justify-center rounded-lg font-mono text-[11px] font-semibold tracking-wide transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${language === value ? 'text-signal' : 'text-ink-faint hover:text-ink-muted'}`}
+          className={`relative z-10 flex h-full w-1/2 items-center justify-center rounded-[14px] font-mono text-[11px] font-semibold tracking-wider transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${language === value ? 'text-ink drop-shadow-[0_1px_2px_rgba(0,0,0,.5)]' : 'text-ink-faint hover:text-ink-muted'}`}
         >
           {value === 'en' ? 'EN' : 'PT'}
         </button>
