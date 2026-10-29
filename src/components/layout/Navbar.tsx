@@ -109,7 +109,7 @@ export function Navbar() {
                       : 'text-ink-muted hover:bg-bg-raised hover:text-ink'
                   }`}
                 >
-                  {link.label}
+                  {pt ? labels[link.id] ?? link.label : link.label}
                 </button>
               ))}
             </motion.nav>
