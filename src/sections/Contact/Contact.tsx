@@ -9,6 +9,8 @@ import {
   import { RevealOnScroll } from '@/components/animations/RevealOnScroll'
   import { Button } from '@/components/ui/Button'
   import { socialLinks } from '@/data/socialLinks'
+  import { useLanguage } from '@/i18n/LanguageContext'
+  import { translations } from '@/i18n/translations'
   import type { SocialLink } from '@/types'
   
   const icons: Record<SocialLink['icon'], LucideIcon> = {
@@ -19,6 +21,8 @@ import {
   }
   
   export function Contact() {
+    const { language } = useLanguage()
+    const pt = language === 'pt-BR'
     return (
       <section
         id="contact"
@@ -37,16 +41,15 @@ import {
               />
   
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-signal">
-                05 · Contact
+                {pt ? translations.contact.eyebrow : '05 · Contact'}
               </span>
   
               <h2 className="mx-auto mt-4 max-w-xl text-balance font-display text-3xl font-semibold text-ink sm:text-4xl">
-                Let's build something amazing together.
+                {pt ? translations.contact.title : "Let's build something amazing together."}
               </h2>
   
               <p className="mx-auto mt-4 max-w-md text-balance text-ink-muted">
-                Open to new opportunities and interesting problems. Reach out
-                and let's talk.
+                {pt ? translations.contact.description : "Open to new opportunities and interesting problems. Reach out and let's talk."}
               </p>
   
               <div className="relative mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -64,7 +67,7 @@ import {
                       }
                       icon={<Icon size={16} />}
                     >
-                      {link.label}
+                      {pt ? (link.icon === 'mail' ? translations.contact.email : link.icon === 'file-text' ? translations.contact.resume : link.label) : link.label}
                     </Button>
                   )
                 })}

@@ -5,6 +5,8 @@ import type { Project } from '@/types'
 
 import { Button } from '@/components/ui/Button'
 import { Tag } from '@/components/ui/Tag'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { translations } from '@/i18n/translations'
 
 interface ProjectCardProps {
   project: Project
@@ -18,6 +20,8 @@ export function ProjectCard({
   index,
 }: ProjectCardProps) {
   const reversed = index % 2 === 1
+  const { language } = useLanguage()
+  const pt = language === 'pt-BR'
 
   return (
     <motion.article
@@ -64,7 +68,7 @@ export function ProjectCard({
                 className="h-1.5 w-1.5 rounded-full bg-emerald-400"
                 aria-hidden="true"
               />
-              Live
+              {pt ? translations.projects.live : 'Live'}
             </span>
           )}
         </div>
@@ -124,7 +128,7 @@ export function ProjectCard({
             icon={<ArrowUpRight size={15} />}
             className="border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:border-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300"
           >
-            Live App
+            {pt ? translations.projects.liveApp : 'Live App'}
           </Button>
           )}
         </div>

@@ -2,8 +2,13 @@ import { RevealOnScroll } from '@/components/animations/RevealOnScroll'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Tag } from '@/components/ui/Tag'
 import { otherProjects } from '@/data/otherProjects'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { translations } from '@/i18n/translations'
+import { otherProjectTranslations } from '@/i18n/projectTranslations'
 
 export function OtherProjects() {
+  const { language } = useLanguage()
+  const pt = language === 'pt-BR'
   return (
     <section
       id="other-projects"
@@ -11,9 +16,9 @@ export function OtherProjects() {
     >
       <div className="mx-auto max-w-content px-6">
         <SectionHeading
-          eyebrow="03 · Other Projects"
-          title="Other projects I'm building"
-          description="A selection of personal products focused on developer growth, reading, and immersive media experiences."
+          eyebrow={pt ? translations.other.eyebrow : "03 · Other Projects"}
+          title={pt ? translations.other.title : "Other projects I'm building"}
+          description={pt ? translations.other.description : "A selection of personal products focused on developer growth, reading, and immersive media experiences."}
         />
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -35,7 +40,7 @@ export function OtherProjects() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <span className="font-mono text-xs uppercase tracking-wide text-ink-faint">
-                    {project.role}
+                    {pt ? otherProjectTranslations[project.id as keyof typeof otherProjectTranslations]?.role ?? project.role : project.role}
                   </span>
 
                   <h3 className="mt-2 font-display text-xl font-semibold text-ink">
@@ -43,7 +48,7 @@ export function OtherProjects() {
                   </h3>
 
                   <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                    {project.description}
+                    {pt ? otherProjectTranslations[project.id as keyof typeof otherProjectTranslations]?.description ?? project.description : project.description}
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
