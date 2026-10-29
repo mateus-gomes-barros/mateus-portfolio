@@ -17,7 +17,7 @@ export function OtherProjects() {
       <div className="mx-auto max-w-content px-6">
         <SectionHeading
           eyebrow={pt ? translations.other.eyebrow : "03 · Other Projects"}
-          title="Other projects I'm building"
+          title={pt ? translations.other.title : "Other projects I'm building"}
           description={pt ? translations.other.description : "A selection of personal products focused on developer growth, reading, and immersive media experiences."}
         />
 
